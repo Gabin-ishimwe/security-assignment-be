@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: security-app
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/securityapp
+    username: postgres
+    password: postgres
+  main:
+    allow-bean-definition-overriding: true
+
+app:
+  jwt:
+    secret: 5v8y/BE(H+MbQeThWmZq4t6w9z$C&F)
+    expiration_time: 86400000 # 1 day
+    refresh_token:
+      expiration_time: 604800000 # 7 days
+  url: 138.68.107.35
